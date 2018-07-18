@@ -1,0 +1,24 @@
+package pack1;
+
+public class Test11While {
+
+	public static void main(String[] args) {
+		
+		// 반복문 while.
+		
+		int w = 10;
+		while (w <= 5) {	// 조건이 참인 동안 반복.
+			System.out.print("W: " + w);
+		}
+		
+		
+		
+		
+		
+		
+		
+		System.out.println("종료");
+
+	}
+
+}

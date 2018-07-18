@@ -1,0 +1,14 @@
+package pack1;
+
+public class QQ1 {
+
+	public static void main(String[] args) {
+		
+		// 문)두 개의 실수와 연산자(a,s,m,d)를 각각 입력받아 사칙연산 수행. 
+		//					    (+ - * /)
+		
+		
+
+	}
+
+}

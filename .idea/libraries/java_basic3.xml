@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="java_basic3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/java_basic2/java_basic.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

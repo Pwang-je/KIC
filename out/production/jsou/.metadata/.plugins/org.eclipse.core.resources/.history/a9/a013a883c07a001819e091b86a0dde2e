@@ -1,0 +1,17 @@
+package pack1;
+
+public class QQ3 {
+
+	public static void main(String[] args) {
+		// 삼각형의 세 꼭지점의 좌표를 입력받아 
+		// 그 삼각형이 직각삼각형이면 'Yes'를, 그렇지 않으면 'No'를 
+		// 출력하는 프로그램을 만드세요. 
+
+		
+		
+		
+		
+		
+	}
+
+}

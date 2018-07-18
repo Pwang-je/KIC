@@ -1,0 +1,17 @@
+package pack1;
+
+public class Test11While {
+
+	public static void main(String[] args) {
+		
+		// 반복문 while.
+		
+		
+		
+		
+		
+		System.out.println("종료");
+
+	}
+
+}

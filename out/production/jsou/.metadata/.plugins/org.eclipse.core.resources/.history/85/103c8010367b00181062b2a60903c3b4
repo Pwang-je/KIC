@@ -1,0 +1,26 @@
+package pack1;
+
+public class Test90629 {
+
+	public static void main(String[] args) {
+		
+		// Switch 2
+		String jik = "과장";
+		String msg = "기타";
+		
+		switch (jik) {
+		case "사원":
+			msg = "열심히";
+			break;
+		case "대리":			
+		case "과장":
+			msg = "우수해";
+			break;
+		default:
+			System.out.println("그외 지급");
+		}
+		System.out.println(msg);
+
+	}
+
+}

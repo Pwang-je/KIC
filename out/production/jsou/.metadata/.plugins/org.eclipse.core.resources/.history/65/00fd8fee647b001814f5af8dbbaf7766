@@ -1,0 +1,92 @@
+package pack1;
+
+import java.util.Scanner;
+
+public class Test9Exam {
+
+	public static void main(String[] args) throws Exception {
+		
+		// Q1 : 키보드로부터 숫자를 (2 ~ 9 ) 입력받아 구구단 출력.
+		
+		Scanner input = new Scanner(System.in);
+		System.out.print("구구단 숫자 입력: ");
+		int num = input.nextInt();
+		input.close();
+		
+		for (int gugu = 1; gugu < 10; gugu++ ) {
+			System.out.println( num + " * " + gugu + " = " + ( num * gugu));
+		}				
+		System.out.println("----------");	
+			
+		
+		
+		// Q2 : 1~100 사이의 정수 중 3의 배수이면서 5의 배수의 갯수와 
+		//		그 수들의 합을 출력.
+					
+		int e = 0, sum = 0, getsu = 0;
+		
+		for ( int i = 1; i <= 100; i++ ) {			
+			if ( i % 3 == 0 && i % 5 == 0 ) {
+				sum += i;	
+				System.out.println( i + ",");
+				getsu++;
+			}			
+		}
+		System.out.println("sum : " + sum);
+		System.out.println("getsu : " + getsu);			
+		System.out.println("----------");
+		
+		
+		
+		// Q3 : 2~9 단을 모두 출력.
+		
+		for ( int i = 1; i < 10; i++ ) {
+			for ( int j = 1; j <= 9; j++ ) {
+				System.out.println( i + " * " + j + " = " + j * i );
+			}
+		}		
+		System.out.println("----------");
+		
+		
+		
+		// Q4 : *********
+		//		 *******
+		//		  *****
+		//		   ***
+		//		    *	
+	 
+		for ( int f = 0; f < 5; f++ ) {
+			for ( int i = 0; i < f; i++ ) {
+				System.out.print(" ");
+			}		
+			for ( int i = 9-f; i > 0+f; i--) {
+				System.out.print("*");				
+			}			
+			System.out.println();
+		}			
+		System.out.println("----------");
+		
+		
+		// Q5 : 4번을 뒤집어서 출력.
+		
+		for ( int t = 0; t < 5; t++ ) {
+//			for ( int p = 0 - t; p < t; p++ ) {
+//				System.out.print(" ");
+//			}
+			for ( int p = 0-t; p < 1+t; p++ ) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+
+	}	// static void main;
+
+}	// class Test9Exam;

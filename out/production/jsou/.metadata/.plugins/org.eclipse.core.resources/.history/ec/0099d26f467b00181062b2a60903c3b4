@@ -1,0 +1,38 @@
+package pack1;
+
+public class Test10for {
+
+	public static void main(String[] args) {
+		
+		int a, hap = 0;	// 누적 기억장소 초기화
+		for ( a=1; a<=5; a++ ) {
+			System.out.print(a + " ");
+//			hap = hap + a;
+			hap += a;
+		// ! for 문 내에서 a 변수에 변화를 주지 말 것.
+		}
+		System.out.println("\na:" + a);
+		System.out.println("합은 " + hap);
+
+		for(int i=65; i<=90; i++) {
+			System.out.print((char)i + "\t");
+		}
+		
+		System.out.println();
+		
+		for (int i='A'; i<= 'Z'; i++) {
+			System.out.print(i+" ");
+		}
+		
+		System.out.println();
+		
+		for ( int j = 10; j > 1; j -= 2) {
+			System.out.print(j + " ");
+		}
+		
+		
+		
+		System.out.println("\n프로그램 종료");
+	}	// static void main;
+
+}	// class Test10for;

@@ -1,0 +1,27 @@
+package pack1;
+
+public class Test11While {
+
+	public static void main(String[] args) {
+		
+		// 반복문 while.
+		
+		int w = 1;	// for ( 변수 = 초기값; 조건문; 증감식) { }
+		
+		// while 은 꼭 변수를 지정해줘야함.
+		while (w <= 5) {	// 조건이 참인 동안 반복.
+			System.out.print("W: " + w);
+			w += 1;	// 반복문을 빠져나올 수 있는 명령문이 필요함. (필수!)
+		}
+		
+		
+		
+		
+		
+		
+		
+		System.out.println("종료");
+
+	}
+
+}

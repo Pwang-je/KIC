@@ -1,0 +1,42 @@
+package pack1;
+
+import java.util.Scanner;
+
+public class QQ2 {
+
+	public static void main(String[] args) {
+		
+		// 문제 ) 키보드로 부터 상품명, 수량, 단가를 각각 입력받아 금액(수량*단가) 구하기.
+		// 조건 : 금액이 5만원 이상이면 금액의 10%, 아니면 금액의 5%를 세금으로 출력한다.
+		// 출력   상품명:***  금액:***  세금:***
+		
+		
+		// 키보드로 값 얻기;
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("상품명: ");
+		String Product = sc.nextLine();
+		System.out.print("수량: ");
+		int Qty = sc.nextInt();
+		System.out.println("단가: ");
+		int Unit = sc.nextInt();
+		sc.close();
+		
+		int sum = Qty*Unit;	// 수량*단가
+		
+		int iProduct = Integer.parseInt(Product); // 문자열 상품명을 치환.
+		
+		double Tax = 0.0;
+		if ( sum >= 50000 ) {
+			Tax = sum*0.1;
+		} else {
+			Tax = sum*0.05;
+		}
+		
+		System.out.println("상품명은: " + iProduct);
+		System.out.println("금액은 : " + sum);
+		System.out.println("세금은 : " + (int)Tax);
+
+	}
+
+}
