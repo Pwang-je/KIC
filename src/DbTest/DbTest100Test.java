@@ -22,7 +22,7 @@ public class DbTest100Test extends JFrame implements ActionListener {
   JTextField txt_c, txt_g, txt_q, txt_u;
 
   Connection conn;
-  PreparedStatement pstmt;
+  PreparedStatement pstmt, pstmt_2;
   ResultSet rs_1;
 
   public DbTest100Test() {
@@ -39,16 +39,30 @@ public class DbTest100Test extends JFrame implements ActionListener {
   }
 
   private void accDB() {
+
     try {
       Class.forName("oracle.jdbc.driver.OracleDriver");
       conn = DriverManager.getConnection("jdbc:oracle:thin:@127.0.0.1:1521:orcl", "scott", "tiger");
 
-      /*stmt이름 = conn.prepareStatement(sql이름);
-      sql이름 = "sql query";
-      resultset이름 = stmt이름.exequery(sql이름);
-      resultset이름.next();*/
+      // sangdata 출력하는 sql.
 
-      display();    // DISPLAY;
+      String sql = "SELECT * FROM SANGDATA ORDER BY CODE";
+      pstmt = conn.prepareStatement(sql);
+      rs_1 = pstmt.executeQuery();
+
+      // sangdata 출력.
+      int cou = 0;
+      txt_area.append("코드" + "\t" + "상품명" + "\t" + "수량" + "\t" + "단가" + "\n"); // txt_Area 에 이런걸 갖다 붙일꺼다. 단순 보여지는 부분.
+      while (rs_1.next()) {
+        String str = (rs_1.getString(1) + "\t" +
+            rs_1.getString(2) + "\t" +
+            rs_1.getString(3) + "\t" +
+            rs_1.getString(4) + "\n");
+        txt_area.append(str);
+        cou++;
+      }
+      txt_area.append("건수: " + cou);
+
     } catch (Exception e) {
       System.out.println("accDB err: " + e);
     }
@@ -82,55 +96,44 @@ public class DbTest100Test extends JFrame implements ActionListener {
 
   }
 
-  private void display() {
 
+  private void update() {
+
+    // sql 데이터 업로드 부분.
     try {
-      /*String sql = "SELECT * FROM SANGDATA WHERE CODE=?,?,?,?";
-      pstmt = conn.prepareStatement(sql);
-      pstmt.setString(, )
-      rs = pstmt.executeQuery()
-      if (rs.next()) {
-      sout(rs.getString("code"));
-      sout(rs.getString("sang"));
-      sout(rs.getString("su"));
-      sout(rs.getString("dan"));
-*/
+      String usql = "INSERT INTO SANGDATA VALUES (?,?,?,?)";
+      pstmt_2 = conn.prepareStatement(usql);
 
-      while ( rs_1.next()) {
-        System.out.println(
-            rs_1.getString(1) +
-            rs_1.getString(2) +
-            rs_1.getString(3) +
-            rs_1.getString(4)
-        );
-      }
-    } catch (Exception e) {
-      System.out.println("display 안댐" + e);
+      // values 로 받은 저 코드,상품명,수량,단가 자체가 private void layInit 에서 txt_c 로 정했기 때문에,
+      // 값을 받을 때도 txt_c로 받아야 하는거임. 근데, txt 이기 때문에 (=string) 거기엔 숫자가 들어갈테고,
+      // 숫자로 바꾸기 위해서 parseInt 를 써서 변환시키는거임.
+      pstmt_2.setInt(1, Integer.parseInt(txt_c.getText()));
+      pstmt_2.setString(2,txt_g.getText());
+      pstmt_2.setInt(3, Integer.parseInt(txt_q.getText()));
+      pstmt_2.setInt(4, Integer.parseInt(txt_u.getText()));
+      pstmt_2.executeUpdate();
+      txt_area.setText(null);   // 업로드 한 후~ txt_area 초기화한다음 결과값 나오게 함. 이부분!!!! 먼이ㅏ러밍하ㅓㅁㄴㅇ
+      accDB();
+
+
+    } catch (Exception e1) {
+      System.out.println("update 실패" + e1.getMessage());
     }
+
+
   }
+
 
 
   @Override
   public void actionPerformed(ActionEvent e) {
 
-    try {
-      // 자료 추가
-      String isql = "INSERT INTO SANGDATA VALUES(?,?,?,?)";
-      pstmt = conn.prepareStatement(isql);
-      pstmt.setString(1,"CODE");
-      pstmt.setString(2, "SANG");
-      pstmt.setString(3, "SU") ;
-      pstmt.setString(4, "DAN"); // 물음표 순서대로 1,2,3,4가 됨.
-      int re = pstmt.executeUpdate();
-      if ( re == 1 ) {
-        System.out.println("추가 성공");
-      } else {
-        System.out.println("추가 실패");
-      }
-    } catch (Exception e1) {
-      System.out.println("action event 안댐" + e1.getMessage());
-    }
-    display();
+    update();
+
+    txt_c.setText("");
+    txt_g.setText("");
+    txt_u.setText("");
+    txt_q.setText("");
 
 
   }
@@ -139,4 +142,5 @@ public class DbTest100Test extends JFrame implements ActionListener {
   public static void main(String[] args) {
     new DbTest100Test();
   }
+
 }
