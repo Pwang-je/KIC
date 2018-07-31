@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component jdk="1.8" jdk_type="JavaSDK">
+<component inherit-compiler-output="true" inheritJdk="true">
+	<output-test url="file://$MODULE_DIR$/../out/test/java_basic"/>
 	<exclude-output/>
 	<contentEntry url="file://$MODULE_DIR$"/>
+	<contentEntry url="jar://$MODULE_DIR$/../../ojdbc7.jar!/"/>
+	<levels>
+		<level name=".mylyn" value="project"/>
+		<level name=".mylyn2" value="project"/>
+		<level name=".mylyn1" value="project"/>
+	</levels>
 </component>
