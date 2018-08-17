@@ -1,3 +1,4 @@
+/*
 package kr.co.kic;
 
 import java.awt.*;
@@ -398,4 +399,4 @@ public class BookCustomer extends JPanel implements ActionListener {
 	}
 
 
-}
+}*/

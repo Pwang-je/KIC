@@ -1,3 +1,4 @@
+/*
 package kr.co.kic;
 
 import java.awt.*;
@@ -280,4 +281,4 @@ public class BookEtcCustomer2DBar extends JPanel {
 
 	}
 
-}
+}*/

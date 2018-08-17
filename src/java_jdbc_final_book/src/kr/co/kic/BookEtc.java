@@ -1,3 +1,4 @@
+/*
 package kr.co.kic;
 
 import java.awt.*;
@@ -55,3 +56,4 @@ public class BookEtc extends JPanel implements ChangeListener, ActionListener{
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }
+*/
